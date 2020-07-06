@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 namespace B13\Container\Tca;
 
@@ -11,13 +12,12 @@ namespace B13\Container\Tca;
  */
 
 use B13\Container\Domain\Factory\Exception;
+use B13\Container\Domain\Factory\ContainerFactory;
 use TYPO3\CMS\Backend\View\BackendLayoutView;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use B13\Container\Domain\Factory\ContainerFactory;
 
 class ItemProcFunc
 {
-
     /**
      * @var ContainerFactory
      */
@@ -32,7 +32,6 @@ class ItemProcFunc
      * @var Registry
      */
     protected $tcaRegistry = null;
-
 
     /**
      * ItemProcFunc constructor.
@@ -115,5 +114,4 @@ class ItemProcFunc
         }
         $parameters['items'] = $items;
     }
-
 }

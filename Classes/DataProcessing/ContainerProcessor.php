@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 namespace B13\Container\DataProcessing;
 
@@ -11,16 +12,14 @@ namespace B13\Container\DataProcessing;
  */
 
 use B13\Container\Domain\Factory\Exception;
+use B13\Container\Domain\Factory\ContainerFactory;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
-use B13\Container\Domain\Factory\ContainerFactory;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Frontend\ContentObject\RecordsContentObject;
 
-
 class ContainerProcessor implements DataProcessorInterface
 {
-
     /**
      * @var ContainerFactory
      */
@@ -66,7 +65,7 @@ class ContainerProcessor implements DataProcessorInterface
             $container = $this->containerFactory->buildContainer($contentId);
             $children = $container->getChildrenByColPos($colPos);
 
-            $contentRecordRenderer = new RecordsContentObject($cObj);
+            $contentRecordRenderer = GeneralUtility::makeInstance(RecordsContentObject::class, $cObj);
             $conf = [
                 'tables' => 'tt_content'
             ];

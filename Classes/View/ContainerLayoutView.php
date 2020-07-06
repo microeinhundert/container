@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 namespace B13\Container\View;
 
@@ -10,6 +11,8 @@ namespace B13\Container\View;
  * of the License, or any later version.
  */
 
+use B13\Container\Domain\Factory\ContainerFactory;
+use B13\Container\Domain\Model\Container;
 use TYPO3\CMS\Backend\View\PageLayoutView;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Backend\Utility\BackendUtility;
@@ -18,13 +21,10 @@ use TYPO3\CMS\Core\Imaging\Icon;
 use TYPO3\CMS\Core\Utility\StringUtility;
 use TYPO3\CMS\Core\Type\Bitmask\Permission;
 use TYPO3\CMS\Core\Versioning\VersionState;
-use B13\Container\Domain\Factory\ContainerFactory;
-use B13\Container\Domain\Model\Container;
 use Psr\EventDispatcher\EventDispatcherInterface;
 
 class ContainerLayoutView extends PageLayoutView
 {
-
     /**
      * @var ContainerFactory
      */
@@ -34,7 +34,6 @@ class ContainerLayoutView extends PageLayoutView
      * @var Container
      */
     protected $container = null;
-
 
     /**
      * ContainerLayoutView constructor.
@@ -51,7 +50,6 @@ class ContainerLayoutView extends PageLayoutView
             parent::__construct($eventDispatcher);
         }
     }
-
 
     /**
      * @param int $uid
@@ -177,7 +175,6 @@ class ContainerLayoutView extends PageLayoutView
         return $this->container->getLanguage() === 0 || !$this->container->isConnectedMode();
     }
 
-
     /**
      * @param int $colPos
      * @return string
@@ -298,5 +295,4 @@ class ContainerLayoutView extends PageLayoutView
 
         return $head . $content;
     }
-
 }

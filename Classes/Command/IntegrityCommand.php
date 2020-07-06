@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 namespace B13\Container\Command;
 
@@ -18,7 +19,6 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 class IntegrityCommand extends Command
 {
-
     /**
      * @param InputInterface $input
      * @param OutputInterface $output
@@ -44,5 +44,4 @@ class IntegrityCommand extends Command
         }
         return 0;
     }
-
 }

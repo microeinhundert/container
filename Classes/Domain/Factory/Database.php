@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 namespace B13\Container\Domain\Factory;
 
@@ -17,10 +18,8 @@ use TYPO3\CMS\Core\Database\Query\Restriction\DeletedRestriction;
 use TYPO3\CMS\Core\SingletonInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
-
 class Database implements SingletonInterface
 {
-
     /**
      * @return QueryBuilder
      */
@@ -108,7 +107,6 @@ class Database implements SingletonInterface
             ->fetchAll();
         return $records;
     }
-
 
     /**
      * @param array $records

@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 namespace B13\Container\Integrity\Error;
 
@@ -11,7 +12,6 @@ namespace B13\Container\Integrity\Error;
  */
 
 use TYPO3\CMS\Core\Messaging\AbstractMessage;
-
 
 class WrongPidError implements ErrorInterface
 {
@@ -76,5 +76,4 @@ class WrongPidError implements ErrorInterface
     {
         return $this->containerRecord;
     }
-
 }

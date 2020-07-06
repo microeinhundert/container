@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 namespace B13\Container\Integrity;
 
@@ -19,7 +20,6 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 class Integrity implements SingletonInterface
 {
-
     /**
      * @var Database
      */
@@ -29,7 +29,6 @@ class Integrity implements SingletonInterface
      * @var Registry
      */
     protected $tcaRegistry = null;
-
 
     /**
      * ContainerFactory constructor.
@@ -75,5 +74,4 @@ class Integrity implements SingletonInterface
         }
         return $res;
     }
-
 }

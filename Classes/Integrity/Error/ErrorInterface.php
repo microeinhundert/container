@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 namespace B13\Container\Integrity\Error;
 
@@ -12,7 +13,6 @@ namespace B13\Container\Integrity\Error;
 
 interface ErrorInterface
 {
-
     /**
      * @return string
      */
@@ -22,5 +22,4 @@ interface ErrorInterface
      * @return int
      */
     public function getSeverity(): int;
-
 }

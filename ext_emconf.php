@@ -1,6 +1,4 @@
 <?php
-
-
 $EM_CONF[$_EXTKEY] = [
     'title' => 'Container',
     'description' => 'Create Custom Container Content Elements for TYPO3',
@@ -19,4 +17,3 @@ $EM_CONF[$_EXTKEY] = [
         'suggests' => []
     ]
 ];
-

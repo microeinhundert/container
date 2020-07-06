@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 namespace B13\Container\Integrity;
 
@@ -19,7 +20,6 @@ use TYPO3\CMS\Core\Database\ConnectionPool;
 
 class Database implements SingletonInterface
 {
-
     /**
      * @return QueryBuilder
      */
@@ -29,7 +29,6 @@ class Database implements SingletonInterface
         $queryBuilder->getRestrictions()->removeAll()->add(GeneralUtility::makeInstance(DeletedRestriction::class));
         return $queryBuilder;
     }
-
 
     /**
      * @param array $cTypes

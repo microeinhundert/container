@@ -13,10 +13,10 @@ namespace B13\Container\Tests\Unit\Hooks;
 use B13\Container\Domain\Factory\ContainerFactory;
 use B13\Container\Domain\Model\Container;
 use B13\Container\Tca\Registry;
+use B13\Container\Hooks\UsedRecords;
 use TYPO3\CMS\Backend\View\PageLayoutView;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
-use B13\Container\Hooks\UsedRecords;
 
 class UsedRecordsTest extends UnitTestCase
 {
@@ -47,7 +47,7 @@ class UsedRecordsTest extends UnitTestCase
     {
         $pageLayoutView = $this->prophesize(PageLayoutView::class);
         $containerFactory = $this->prophesize(ContainerFactory::class);
-        $container = new Container(['CType' => 'myCType'], []);
+        $container = GeneralUtility::makeInstance(Container::class, ['CType' => 'myCType'], []);
         $containerFactory->buildContainer(1)->willReturn($container);
         $tcaRegistry = $this->prophesize(Registry::class);
         $tcaRegistry->getAvaiableColumns('myCType')->willReturn([['colPos' => 2]]);
@@ -67,7 +67,7 @@ class UsedRecordsTest extends UnitTestCase
     {
         $pageLayoutView = $this->prophesize(PageLayoutView::class);
         $containerFactory = $this->prophesize(ContainerFactory::class);
-        $container = new Container(['CType' => 'myCType'], []);
+        $container = GeneralUtility::makeInstance(Container::class, ['CType' => 'myCType'], []);
         $containerFactory->buildContainer(1)->willReturn($container);
         $tcaRegistry = $this->prophesize(Registry::class);
         $tcaRegistry->getAvaiableColumns('myCType')->willReturn([['colPos' => 3]]);

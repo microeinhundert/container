@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 namespace  B13\Container\ContentDefender\Form\FormDataProvider;
 
@@ -18,7 +19,6 @@ use TYPO3\CMS\Backend\Form\FormDataProviderInterface;
 
 class TcaCTypeItems implements FormDataProviderInterface
 {
-
     /**
      * @var Registry
      */
@@ -71,5 +71,4 @@ class TcaCTypeItems implements FormDataProviderInterface
         }
         return $result;
     }
-
 }

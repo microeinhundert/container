@@ -1,6 +1,7 @@
 <?php
+declare(strict_types = 1);
 
-namespace  B13\Container\Hooks\Datahandler;
+namespace B13\Container\Hooks\Datahandler;
 
 /*
  * This file is part of TYPO3 CMS-based extension "container" by b13.
@@ -17,7 +18,6 @@ use TYPO3\CMS\Core\DataHandling\DataHandler;
 
 class DatamapAfterDatabaseOperationHook
 {
-
     /**
      * @param string $status
      * @param string $table
@@ -52,6 +52,4 @@ class DatamapAfterDatabaseOperationHook
             }
         }
     }
-
-
 }

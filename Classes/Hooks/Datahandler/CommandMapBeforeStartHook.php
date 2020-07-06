@@ -1,6 +1,7 @@
 <?php
+declare(strict_types = 1);
 
-namespace  B13\Container\Hooks\Datahandler;
+namespace B13\Container\Hooks\Datahandler;
 
 /*
  * This file is part of TYPO3 CMS-based extension "container" by b13.
@@ -11,9 +12,9 @@ namespace  B13\Container\Hooks\Datahandler;
  */
 
 use B13\Container\Tca\Registry;
+use B13\Container\Domain\Factory\ContainerFactory;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\MathUtility;
-use B13\Container\Domain\Factory\ContainerFactory;
 use TYPO3\CMS\Core\DataHandling\DataHandler;
 
 class CommandMapBeforeStartHook
@@ -38,6 +39,7 @@ class CommandMapBeforeStartHook
         $this->containerFactory = $containerFactory ?? GeneralUtility::makeInstance(ContainerFactory::class);
         $this->tcaRegistry = $tcaRegistry ?? GeneralUtility::makeInstance(Registry::class);
     }
+
     /**
      * @param DataHandler $dataHandler
      */
@@ -83,7 +85,4 @@ class CommandMapBeforeStartHook
         }
         return $data;
     }
-
-
-
 }

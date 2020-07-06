@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 namespace B13\Container\Hooks;
 
@@ -16,7 +17,6 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 class TableConfigurationPostProcessing implements TableConfigurationPostProcessingHookInterface
 {
-
     /**
      * @var Registry
      */

@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 namespace B13\Container\Domain\Model;
 
@@ -32,7 +33,7 @@ class Container
      * @param array $childRecords
      * @param int $language
      */
-    public function __construct(array $containerRecord, array $childRecords, $language = 0)
+    public function __construct(array $containerRecord, array $childRecords, int $language = 0)
     {
         $this->containerRecord = $containerRecord;
         $this->childRecords = $childRecords;
@@ -118,5 +119,4 @@ class Container
     {
         return array_keys($this->childRecords);
     }
-
 }

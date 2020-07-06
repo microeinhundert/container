@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 namespace B13\Container\Hooks;
 
@@ -10,7 +11,6 @@ namespace B13\Container\Hooks;
  * of the License, or any later version.
  */
 
-
 use B13\Container\Tca\Registry;
 use TYPO3\CMS\Backend\View\PageLayoutViewDrawItemHookInterface;
 use TYPO3\CMS\Backend\View\PageLayoutView;
@@ -19,12 +19,10 @@ use TYPO3\CMS\Fluid\View\StandaloneView;
 
 class DrawItem implements PageLayoutViewDrawItemHookInterface
 {
-
     /**
      * @var Registry
      */
     protected $tcaRegistry = null;
-
 
     /**
      * @param Registry|null $tcaRegistry
@@ -55,9 +53,4 @@ class DrawItem implements PageLayoutViewDrawItemHookInterface
             $row['tx_container_grid'] = $view->render();
         }
     }
-
-
 }
-
-
-

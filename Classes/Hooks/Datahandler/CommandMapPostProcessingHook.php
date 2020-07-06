@@ -1,6 +1,7 @@
 <?php
+declare(strict_types = 1);
 
-namespace  B13\Container\Hooks\Datahandler;
+namespace B13\Container\Hooks\Datahandler;
 
 /*
  * This file is part of TYPO3 CMS-based extension "container" by b13.
@@ -11,9 +12,9 @@ namespace  B13\Container\Hooks\Datahandler;
  */
 
 use B13\Container\Domain\Factory\Exception;
+use B13\Container\Domain\Factory\ContainerFactory;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\DataHandling\DataHandler;
-use B13\Container\Domain\Factory\ContainerFactory;
 
 class CommandMapPostProcessingHook
 {

@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 namespace  B13\Container\ContentDefender\Hooks;
 
@@ -19,7 +20,6 @@ use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 class WizardItems extends WizardItemsHook
 {
-
     /**
      * @var Registry
      */
@@ -84,6 +84,4 @@ class WizardItems extends WizardItemsHook
 
         return array_intersect_key($wizardItems, $availableWizardItems);
     }
-
-
 }

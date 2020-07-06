@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 namespace B13\Container\Tca;
 
@@ -19,7 +20,6 @@ use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 class Registry implements SingletonInterface
 {
-
     /**
      * @param string $cType
      * @param string $label
@@ -41,7 +41,6 @@ class Registry implements SingletonInterface
         bool $registerInNewContentElementWizard = true
     ): void
     {
-
         ExtensionManagementUtility::addTcaSelectItem(
             'tt_content',
             'CType',

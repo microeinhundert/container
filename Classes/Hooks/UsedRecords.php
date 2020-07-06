@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 namespace B13\Container\Hooks;
 
@@ -12,13 +13,12 @@ namespace B13\Container\Hooks;
 
 use B13\Container\Domain\Factory\ContainerFactory;
 use B13\Container\Domain\Factory\Exception;
+use B13\Container\Tca\Registry;
 use TYPO3\CMS\Backend\View\PageLayoutView;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use B13\Container\Tca\Registry;
 
 class UsedRecords
 {
-
     /**
      * @var Registry
      */

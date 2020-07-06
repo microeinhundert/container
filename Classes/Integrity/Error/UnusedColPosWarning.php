@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 namespace B13\Container\Integrity\Error;
 
@@ -11,7 +12,6 @@ namespace B13\Container\Integrity\Error;
  */
 
 use TYPO3\CMS\Core\Messaging\AbstractMessage;
-
 
 class UnusedColPosWarning implements ErrorInterface
 {
@@ -61,5 +61,4 @@ class UnusedColPosWarning implements ErrorInterface
     {
         return AbstractMessage::ERROR;
     }
-
 }

@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 namespace B13\Container\Domain\Factory;
 
@@ -11,15 +12,14 @@ namespace B13\Container\Domain\Factory;
  */
 
 use B13\Container\Domain\Model\Container;
+use B13\Container\Tca\Registry;
 use TYPO3\CMS\Core\Context\Context;
 use TYPO3\CMS\Core\Context\LanguageAspect;
 use TYPO3\CMS\Core\SingletonInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use B13\Container\Tca\Registry;
 
 class ContainerFactory implements SingletonInterface
 {
-
     /**
      * @var Database
      */
@@ -29,7 +29,6 @@ class ContainerFactory implements SingletonInterface
      * @var Registry
      */
     protected $tcaRegistry = null;
-
 
     /**
      * ContainerFactory constructor.
@@ -48,7 +47,6 @@ class ContainerFactory implements SingletonInterface
      */
     public function buildContainer(int $uid): Container
     {
-
         // FE $uid alays default language uid
         // BE $uid localized $uid
         if (TYPO3_MODE === 'FE') {
@@ -86,9 +84,9 @@ class ContainerFactory implements SingletonInterface
         $childRecords = $this->doWorkspaceOverlay($childRecords);
         $childRecordByColPosKey = $this->recordsByColPosKey($childRecords);
         if ($defaultRecord === null) {
-            $container = new Container($record, $childRecordByColPosKey, $language);
+            $container = GeneralUtility::makeInstance(Container::class, $record, $childRecordByColPosKey, $language);
         } else {
-            $container = new Container($defaultRecord, $childRecordByColPosKey, $language);
+            $container = GeneralUtility::makeInstance(Container::class, $defaultRecord, $childRecordByColPosKey, $language);
         }
         return $container;
     }
@@ -176,9 +174,9 @@ class ContainerFactory implements SingletonInterface
         $childRecords = $this->doWorkspaceOverlay($childRecords);
         $childRecordByColPosKey = $this->recordsByColPosKey($childRecords);
         if ($defaultRecord === null) {
-            $container = new Container($record, $childRecordByColPosKey, $language);
+            $container = GeneralUtility::makeInstance(Container::class, $record, $childRecordByColPosKey, $language);
         } else {
-            $container = new Container($defaultRecord, $childRecordByColPosKey, $language);
+            $container = GeneralUtility::makeInstance(Container::class, $defaultRecord, $childRecordByColPosKey, $language);
         }
         return $container;
     }
@@ -240,5 +238,4 @@ class ContainerFactory implements SingletonInterface
         }
         return $recordsByColPosKey;
     }
-
 }
