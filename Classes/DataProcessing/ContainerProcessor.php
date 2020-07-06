@@ -25,6 +25,9 @@ class ContainerProcessor implements DataProcessorInterface
      */
     protected $containerFactory = null;
 
+    /**
+     * @param ContainerFactory|null $containerFactory
+     */
     public function __construct(ContainerFactory $containerFactory = null)
     {
         $this->containerFactory = $containerFactory ?? GeneralUtility::makeInstance(ContainerFactory::class);
@@ -44,7 +47,6 @@ class ContainerProcessor implements DataProcessorInterface
         array $processedData
     )
     {
-
         if (isset($processorConfiguration['if.']) && !$cObj->checkIf($processorConfiguration['if.'])) {
             return $processedData;
         }

@@ -31,7 +31,6 @@ class ContainerFactory implements SingletonInterface
     protected $tcaRegistry = null;
 
     /**
-     * ContainerFactory constructor.
      * @param Database|null $database
      * @param Registry|null $tcaRegistry
      */
