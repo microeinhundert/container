@@ -206,7 +206,7 @@ class Registry implements SingletonInterface
     {
         if (!empty($GLOBALS['TCA']['tt_content']['containerConfiguration'])) {
             $content = '
-mod.wizards.newContentElement.wizardItems.container.header = Container
+mod.wizards.newContentElement.wizardItems.container.header = Container elements
 mod.wizards.newContentElement.wizardItems.container.show = *
 ';
             foreach ($GLOBALS['TCA']['tt_content']['containerConfiguration'] as $cType => $containerConfiguration) {
